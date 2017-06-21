@@ -9,7 +9,6 @@ class TreeView extends React.PureComponent {
     super(props);
 
     this.state = {
-      dataSource: this.props.dataSource,
       separator: this.props.separator ? this.props.separator : separator
     };
   }
@@ -17,7 +16,7 @@ class TreeView extends React.PureComponent {
   onExpandClick = event => {
     const data = event.target.dataset;
     const path = data.parentpath.split(this.state.separator);
-    let dataSource = [...this.state.dataSource];
+    let dataSource = [...this.props.dataSource];
     updateNodeCollapse(dataSource, path);
     this.setState({ dataSource: dataSource });
   };
@@ -59,7 +58,7 @@ class TreeView extends React.PureComponent {
     }
     return (
       <div>
-        {dataSource["childrens"] &&
+        {dataSource["children"] &&
           <div
             className={arrowClassName}
             onClick={this.onExpandClick}
@@ -76,13 +75,12 @@ class TreeView extends React.PureComponent {
         </span>
         
         {!dataSource["collapsed"] &&
-          this.renderTreeView(dataSource["childrens"], dataSource["level"] + 1)}
+          this.renderTreeView(dataSource["children"], dataSource["level"] + 1)}
       </div>
     );
   };
-
   render() {
-    const { dataSource } = this.state;
+    const { dataSource } = this.props;
     return (
       <div>
         {this.renderTreeView(dataSource, 0, this.onExpandClick)}
@@ -94,9 +92,9 @@ function updateNodeCollapse(dataSource, parentPath) {
   if (isArray(dataSource)) {
     for (var i = 0; i < dataSource.length; i++) {
       let currentNode = dataSource[i];
-      if (currentNode.key === parentPath[0]) {
-        if (parentPath.length > 1 && currentNode.childrens) {
-          updateNodeCollapse(currentNode.childrens, parentPath.slice(1));
+      if (currentNode.key == parentPath[0]) {
+        if (parentPath.length > 1 && currentNode.children) {
+          updateNodeCollapse(currentNode.children, parentPath.slice(1));
         } else {
           currentNode["collapsed"] = !currentNode["collapsed"];
           return;

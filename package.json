@@ -1,8 +1,8 @@
 {
   "name": "treeview-multilevel-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React component for Multilevel treeview",
-  "main": "index.js",
+  "main": "build/treeview",
   "repository": {
     "type": "git",
     "url": "https://github.com/nitinagrawal08/treeview-multilevel-react.git"

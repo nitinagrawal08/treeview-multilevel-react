@@ -19,6 +19,7 @@ function getTreeViewObj(dataSource, config) {
 			separator: separator,
 			key: "key",
 			value: "key",
+			children: "children", 
 			level: 0
 		},
 		config
@@ -49,13 +50,17 @@ function createTreeElement(dataSource, config) {
 	if(!dataSource["key"]){
 		dataSource["key"] = dataSource[config.key]
 	}
+	if(dataSource[config.children] && !dataSource["children"]){
+		dataSource["children"] = dataSource[config.children]
+	}
 	dataSource["value"] = dataSource[config.value];
 	dataSource["level"] = config.level;
 	dataSource["collapsed"] = false;
 	dataSource["parentPath"] = path + dataSource["key"];
-	if (dataSource["childrens"]) {
+
+	if (dataSource["children"]) {
 		convertTreeViewObj(
-			dataSource["childrens"],
+			dataSource["children"],
 			Object.assign({},config,{parentPath:dataSource['parentPath'],level: config.level+1})
 		);
 	}

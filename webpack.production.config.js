@@ -16,10 +16,10 @@ module.exports = {
     './src/TreeView.js'
   ],
   output: {
-     path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, 'build'),
     publicPath: 'build/',
-    filename: 'react-treeview.js',
-    sourceMapFilename: 'react-treeview.map',
+    filename: 'treeview.js',
+    sourceMapFilename: 'treeview.map',
     library: 'TreeView',
     libraryTarget: 'umd'
   },
