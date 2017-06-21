@@ -58,7 +58,7 @@ class TreeView extends React.PureComponent {
     }
     return (
       <div>
-        {dataSource["children"] &&
+        {dataSource["children"] && dataSource["children"].length>0 &&
           <div
             className={arrowClassName}
             onClick={this.onExpandClick}

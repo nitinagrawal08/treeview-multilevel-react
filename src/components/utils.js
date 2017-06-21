@@ -58,7 +58,7 @@ function createTreeElement(dataSource, config) {
 	dataSource["collapsed"] = false;
 	dataSource["parentPath"] = path + dataSource["key"];
 
-	if (dataSource["children"]) {
+	if (dataSource["children"] && dataSource["children"].length>0) {
 		convertTreeViewObj(
 			dataSource["children"],
 			Object.assign({},config,{parentPath:dataSource['parentPath'],level: config.level+1})

@@ -34,7 +34,8 @@ let dataSource = [
         level: 2,
         key: "soure",
         value: "soure",
-        parentPath: "fruits-->>Orange-->>soure"
+        parentPath: "fruits-->>Orange-->>soure",
+        childrens:[]
       }
       ]
     }]
