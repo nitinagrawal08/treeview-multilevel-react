@@ -1,6 +1,6 @@
 {
   "name": "treeview-multilevel-react",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React component for Multilevel treeview",
   "main": "build/treeview",
   "repository": {
