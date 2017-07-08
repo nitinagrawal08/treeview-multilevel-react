@@ -2,10 +2,11 @@ This is a simple light weight treeview react component. You can render any level
 
 How to use the component:
 
-`import {TreeView, utils} from './Treeview' \\ import TreeView and utils method`
+` //import TreeView and utils method
+import {TreeView, utils} from './Treeview'
 
-Translate your DataSource
-`const myDataSource = {
+//Translate your DataSource
+const myDataSource = {
  	id: 1,	//Mandatory
  	val: 1, //optional
  	childs: [{
@@ -15,10 +16,12 @@ Translate your DataSource
 const treeViewDS = utils.getTreeViewObj(myDataSource,{
 	 	"Key": "id",
 	 	"value": "val",
-	 	"childrens": "childs"})`
+	 	"childrens": "childs"})
 
-render TreeView by passing and action method for click on nodes
-`<TreeView dataSource={treeViewDS} nodeClick={this.nodeClick}/>`
+....
+
+//render TreeView by passing and action method for click on nodes
+<TreeView dataSource={treeViewDS} nodeClick={this.nodeClick}/>`
 
 
 Data format accepted by TreeView
