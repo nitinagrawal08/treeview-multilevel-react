@@ -1,70 +1,46 @@
 let dataSource = [
   {
-    level: 0, 
-    key: "fruits",
-    value: "fruits",
-    collapsed: false,
-    parentPath: "fruits",
-    childrens: [{
-      level: 1, 
-      key: "Apple",
-      value: "Apple",
-      parentPath: "fruits-->>Apple"
+    "key": "fruits",
+    "value": "fruits",
+    "childrens": [{
+      "key": "Apple"
     },
     {
-      level: 1, 
-      key: "Orange",
-      value: "Orange",
-      parentPath: "fruits-->>Orange",
-      collapsed: false,
-      childrens: [{
-        level: 2,
-        key: "sweet",
-        value: "sweet",
-        parentPath: "fruits-->>Orange-->>sweet",
-        collapsed: false,
-        childrens:[{
-          level: 3,
-          key: "happy",
-          value: "happy",
-          parentPath: "fruits-->>Orange-->>sweet-->>happy"
+      "key": "Orange",
+      "value": "Orange",
+      "childrens": [{
+        "key": "variety",
+        "childrens":[{
+          "key": "nagpur"
+        },{
+          "key": "exported"
         }]
       },
       {
-        level: 2,
-        key: "soure",
-        value: "soure",
-        parentPath: "fruits-->>Orange-->>soure",
-        childrens:[]
+        "key": "size",
+        "childrens":[{
+          "key": 'large'
+        },{
+          "key": 'medium'
+        },{
+          "key": 'small'
+        }]
       }
       ]
     }]
   },
   {
-    level: 0, 
-    key: "vegis",
-    value: "vegis",
-    collapsed: false,
-    parentPath: "vegis",
-    childrens: [{
-      level: 1, 
-      key: "potato",
-      value: "potato",
-      parentPath: "vegis-->>potato"
+    "key": "vegis",
+    "value": "vegis",
+    "childrens": [{
+      "key": "potato",
     },
     {
-      level: 1, 
-      key: "cauli",
-      value: "cauli",
-      parentPath: "vegis-->>cauli"
+      "key": "cabbage",
     },{
-      level: 1, 
-      key: "tolli",
-      value: "tolli",
-      parentPath: "vegis-->>tolli"
+      "key": "beans"
     }]
   }
-  
-];
+]
 
 export default dataSource
