@@ -14,6 +14,9 @@ class TreeView extends React.PureComponent {
   }
 
   onExpandClick = event => {
+    if(!this.props.prapogate){
+      event.stopPropagation()
+    }
     const data = event.target.dataset;
     const path = data.parentpath.split(this.state.separator);
     let dataSource = [...this.props.dataSource];
@@ -21,9 +24,12 @@ class TreeView extends React.PureComponent {
     this.setState({ dataSource: dataSource });
   };
   nodeClick = event => {
-    if (this.props.nodeClick) {
+    if(!this.props.prapogate){
+      event.stopPropagation()
+    }
+    if (typeof this.props.nodeClick === 'function') {
       const data = event.target.dataset;
-      this.props.nodeClick(data["key"]);
+      this.props.nodeClick(data);
     }
   };
   renderTreeView = (dataSource, level) => {
@@ -70,6 +76,8 @@ class TreeView extends React.PureComponent {
           className="node"
           onClick={this.nodeClick}
           data-key={dataSource["key"]}
+          data-value={dataSource["value"]}
+          data-level={dataSource["level"]}
         >
           {dataSource["value"]}
         </span>

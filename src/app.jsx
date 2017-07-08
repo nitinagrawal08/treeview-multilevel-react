@@ -1,9 +1,7 @@
 import React from 'react';
 import dataSource from './playground/dataSource'
 import './styles/index.scss'
-import utils from './components/utils'
-import {TreeView} from './Treeview'
-import axios from 'axios'
+import {TreeView, utils} from './Treeview'
 
 //sample config which can be used to convert data source in treeview friendly format
 const config={
@@ -20,8 +18,8 @@ export default class App extends React.PureComponent {
       data:utils.getTreeViewObj(dataSource, {children: 'childrens'}) //use UTILS to convert your data to treeview friendly format
     }
   }
-  nodeClick= (key)=> {
-  	this.setState({'selected': key})
+  nodeClick= ({key,value})=> {
+  	this.setState({'selected': `key(${key}), value(${value})`})
   }
 
   
@@ -29,8 +27,9 @@ export default class App extends React.PureComponent {
   	return (
     	<div>
     		<TreeView dataSource={this.state.data} nodeClick={this.nodeClick}/>
+        <br/>
     		{this.state.selected && <div>
-    			selected value: <span>{this.state.selected}</span>
+    			selected item: <span>{this.state.selected}</span>
     		</div>
     		}
     	</div>
