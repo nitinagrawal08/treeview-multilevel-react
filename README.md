@@ -1,6 +1,10 @@
-# This is a simple light weight treeview react component. You can render any level of child components similar to directory structure. 
+## This is a simple light weight treeview react component. 
 
-# How to use the component:
+You can render any level of child components similar to directory structure. A callback is available to handle node click (select) of any level. 
+
+![](http://imgur.com/gBU2bGV.png)
+
+## How to use the component:
 
 	//import TreeView and utils method
 	import {TreeView, utils} from './Treeview'
@@ -24,7 +28,7 @@
 	<TreeView dataSource={treeViewDS} nodeClick={this.nodeClick}/>
 
 
-# Data format accepted by TreeView
+## Data format accepted by TreeView
 	[
 	  {
 	    "key": "fruits",
